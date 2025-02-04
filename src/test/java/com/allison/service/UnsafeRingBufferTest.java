@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class UnsafeRingBufferTest {
     @Test
     void singleProducerSingleConsumer() {

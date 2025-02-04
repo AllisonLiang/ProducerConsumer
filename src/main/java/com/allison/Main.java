@@ -1,6 +1,6 @@
 package com.allison;
 
-import com.allison.service.CASRingBuffer;
+import com.allison.service.AtomicIntegerRingBuffer;
 import com.allison.service.IntegerConsumer;
 import com.allison.service.IntegerProducer;
 
@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 
 public class Main {
     public static void main(String[] args) { // see more test cases in CASRingBufferTest and UnsafeRingBufferTest
-        CASRingBuffer<Integer> ringBuffer = new CASRingBuffer<>(8);
+        AtomicIntegerRingBuffer<Integer> ringBuffer = new AtomicIntegerRingBuffer<>(8);
 
         ExecutorService executor = Executors.newFixedThreadPool(7);
 

@@ -4,25 +4,23 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 class AtomicIntegerRingBufferTest {
     @Test
     void singleProducerSingleConsumer() {
-        CASRingBuffer<Integer> ringBuffer = new CASRingBuffer<>(8);
+        AtomicIntegerRingBuffer<Integer> ringBuffer = new AtomicIntegerRingBuffer<>(8);
         createProducerConsumer(1, 1, ringBuffer);
     }
 
     @Test
     void moreProducerThanConsumer() {
-        CASRingBuffer<Integer> ringBuffer = new CASRingBuffer<>(8);
+        AtomicIntegerRingBuffer<Integer> ringBuffer = new AtomicIntegerRingBuffer<>(8);
         createProducerConsumer(8, 2, ringBuffer);
     }
 
     @Test
     void lessProducerThanConsumer() {
-        CASRingBuffer<Integer> ringBuffer = new CASRingBuffer<>(8);
+        AtomicIntegerRingBuffer<Integer> ringBuffer = new AtomicIntegerRingBuffer<>(8);
         createProducerConsumer(2, 8, ringBuffer);
     }
 
